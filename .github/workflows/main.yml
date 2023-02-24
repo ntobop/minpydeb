@@ -18,23 +18,23 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install flake8 pytest yamllint
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Flake8 check
         run: |
+          pip install flake8     
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
       - name: Yaml Lint check
         run: |
+          pip install yamllint        
           yamllint -d relaxed --no-warnings .
 
       - name: Debian package creation
         run: |
-          pip install pipreqs
+          pip install pipreqs stem stdeb
           python3 -m  pipreqs.pipreqs .
           sudo apt install python3-setuptools python3-stdeb dh-python python3-all
           python3 setup.py sdist
-          pip3 install stem stdeb
           python3 setup.py --command-packages=stdeb.command bdist_deb
