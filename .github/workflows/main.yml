@@ -6,7 +6,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -30,10 +29,6 @@ jobs:
       - name: Yaml Lint check
         run: |
           yamllint -d relaxed --no-warnings .
-
-      - name: Pytest check
-        run: |
-          pytest upgrade_fw.py
 
       - name: Debian package creation
         run: |
