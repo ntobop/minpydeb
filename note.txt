@@ -1,0 +1,13 @@
+~/git/minpydeb$ tree
+.
+├── requirements.txt
+├── setup.py
+└── src
+    └── minpydeb
+        └── minpydeb.py
+
+sudo apt install python3-stdeb python3-setuptools python3-all dh-python
+pip install pipreqs
+python3 -m  pipreqs.pipreqs .
+python3 setup.py sdist
+python3 setup.py --command-packages=stdeb.command bdist_deb
