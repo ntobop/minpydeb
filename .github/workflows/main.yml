@@ -36,4 +36,5 @@ jobs:
           python3 -m  pipreqs.pipreqs .
           sudo apt install python3-setuptools python3-stdeb dh-python python3-all
           python3 setup.py sdist
+          pip3 install stem stdeb
           python3 setup.py --command-packages=stdeb.command bdist_deb
