@@ -33,7 +33,10 @@ jobs:
 
       - name: Debian package creation
         run: |
-          pip install pipreqs stem stdeb
-          python3 -m  pipreqs.pipreqs .
-          sudo apt install python3-setuptools python3-stdeb dh-python python3-all fakeroot
+          pip install wheel
           python3 setup.py bdist_wheel
+
+#          pip install pipreqs stem stdeb wheel
+#          python3 -m  pipreqs.pipreqs .
+#          sudo apt install python3-setuptools python3-stdeb dh-python python3-all fakeroot
+          
