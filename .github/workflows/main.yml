@@ -34,7 +34,7 @@ jobs:
       - name: Package creation
         run: |
           pip install setuptools wheel
-          python3 setup.py sdist          
+          python3 setup.py sdist
           python3 setup.py bdist_wheel
 
 #          pip install pipreqs stem stdeb wheel
