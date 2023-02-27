@@ -31,9 +31,10 @@ jobs:
           pip install yamllint
           yamllint -d relaxed --no-warnings .
 
-      - name: Debian package creation
+      - name: Package creation
         run: |
-          pip install wheel
+          pip install setuptools wheel
+          python3 setup.py sdist          
           python3 setup.py bdist_wheel
 
 #          pip install pipreqs stem stdeb wheel
