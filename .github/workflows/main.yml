@@ -44,7 +44,7 @@ jobs:
       - name: Git push
         run: |
           git config --global user.email "action@github.com"
-          git config --global user.name "actions-user"        
+          git config --global user.name "actions-user"
           git add -f ./dist/*.whl
           git commit -m 'pushing new wheel'
           git push
