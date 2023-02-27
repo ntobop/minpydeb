@@ -41,6 +41,7 @@ jobs:
 #          python3 -m  pipreqs.pipreqs .
 #          sudo apt install python3-setuptools python3-stdeb dh-python python3-all fakeroot
 
+#Setting->Actions->General->Workflow permissions->"Read and write permissions"
       - name: Git push
         run: |
           git config --global user.email "action@github.com"
