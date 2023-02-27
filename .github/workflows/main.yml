@@ -40,3 +40,9 @@ jobs:
 #          pip install pipreqs stem stdeb wheel
 #          python3 -m  pipreqs.pipreqs .
 #          sudo apt install python3-setuptools python3-stdeb dh-python python3-all fakeroot
+
+      - name: Git push
+        run: |
+          git add -f ./dist/*.whl
+          git commit -m 'pushing new wheel'
+          git push
